@@ -35,7 +35,9 @@ customer_orders as (
     group by 1
 
 ),
-
+country as (
+    select customer_id,country from {{ ref('country') }}
+),
 final as (
 
     select
